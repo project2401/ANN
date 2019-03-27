@@ -59,8 +59,29 @@ class Ann(object):
         print('weights_delta = '+str(weights_delta))
         self.weights_input_h -= (np.dot(weights_delta, h_output.reshape(1, len(h_output)))) * self.learning_rate
 
+        errors_h = weights_delta * self.weights_h_to_o1
+        sigmoidDX_H = h_output * (1 - h_output)
+        weights_delta_to_h = errors_h * sigmoidDX_H
+        self.weights_h_to_o1 -= np.dot(inputs.reshape(len(inputs), 1), weights_delta_to_h).T * self.learning_rate
 
-
+    def MSE (y, Y):
+        returnnp.mean((y-Y)**2)
+    
+    train = [
+        ([0,0,0],0),
+        ([0,0,1],0),
+        ([0,0,2],0),
+        ([0,0,3],0),
+        ([0,1,0],0),
+        ([0,1,1],0),
+        ([0,1,2],0),
+        ([0,1,3],0),
+        ([1,0,0],1),
+        ([1,0,1],0),
+        ([1,0,2],0),
+        ([1,0,3],0),
+        ([1,1,0],1)
+    ]
 
 
 

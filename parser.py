@@ -79,7 +79,7 @@ sigmoidDX = o1*(1 - o1)
 print('sigmoidDX = ', sigmoidDX)
 
 weights_delta = error*sigmoidDX
-print('weights_delta = ', weights_delta)
+print('weights_delta = ', weights_delta) 
 
 ww1New = ww1 - h1i*weights_delta*0.1
 print('ww1New = ',ww1New)
@@ -100,4 +100,4 @@ print('errorForH2 = ',errorForH2)
 errorForH3 = ww3New*weights_delta
 print('errorForH3 = ',errorForH3)
 errorForH4 = ww4New*weights_delta
-print('errorForH4 = ',errorForH4)
+print('errorForH4 = ',errorForH4) 
